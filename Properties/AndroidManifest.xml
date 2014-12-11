@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="SharpDungeon.SharpDungeon" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
+	<uses-sdk android:targetSdkVersion="19" android:minSdkVersion="19" />
+	<application android:label="SharpDungeon" android:icon="@drawable/Icon" android:allowBackup="true" android:debuggable="true" android:vmSafeMode="true" android:allowClearUserData="true" android:hardwareAccelerated="true"></application>
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.INTERNET" />
+</manifest>

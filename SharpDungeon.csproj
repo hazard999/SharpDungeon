@@ -1,0 +1,801 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4611F450-AC82-4970-93D0-6A1AC0D80C45}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SharpDungeon</RootNamespace>
+    <AssemblyName>SharpDungeon</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidApplication>true</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <AndroidUseLatestPlatformSdk>
+    </AndroidUseLatestPlatformSdk>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;Console</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <AndroidLinkSkip />
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <BundleAssemblies>False</BundleAssemblies>
+    <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
+    <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
+    <AndroidStoreUncompressedFileExtensions />
+    <MandroidI18n />
+    <JavaMaximumHeapSize />
+    <JavaOptions />
+    <MonoDroidExtraArgs />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android" />
+    <Reference Include="OpenTK" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="actors\Actor.cs" />
+    <Compile Include="actors\blobs\Alchemy.cs" />
+    <Compile Include="actors\blobs\Blob.cs" />
+    <Compile Include="actors\blobs\ConfusionGas.cs" />
+    <Compile Include="actors\blobs\Fire.cs" />
+    <Compile Include="actors\blobs\Foliage.cs" />
+    <Compile Include="actors\blobs\Freezing.cs" />
+    <Compile Include="actors\blobs\ParalyticGas.cs" />
+    <Compile Include="actors\blobs\Regrowth.cs" />
+    <Compile Include="actors\blobs\ToxicGas.cs" />
+    <Compile Include="actors\blobs\WaterOfAwareness.cs" />
+    <Compile Include="actors\blobs\WaterOfHealth.cs" />
+    <Compile Include="actors\blobs\WaterOfTransmutation.cs" />
+    <Compile Include="actors\blobs\Web.cs" />
+    <Compile Include="actors\blobs\WellWater.cs" />
+    <Compile Include="actors\buffs\Amok.cs" />
+    <Compile Include="actors\buffs\Awareness.cs" />
+    <Compile Include="actors\buffs\Barkskin.cs" />
+    <Compile Include="actors\buffs\Bleeding.cs" />
+    <Compile Include="actors\buffs\Blindness.cs" />
+    <Compile Include="actors\buffs\Buff.cs" />
+    <Compile Include="actors\buffs\Burning.cs" />
+    <Compile Include="actors\buffs\Charm.cs" />
+    <Compile Include="actors\buffs\Combo.cs" />
+    <Compile Include="actors\buffs\Cripple.cs" />
+    <Compile Include="actors\buffs\FlavourBuff.cs" />
+    <Compile Include="actors\buffs\Frost.cs" />
+    <Compile Include="actors\buffs\Fury.cs" />
+    <Compile Include="actors\buffs\GasesImmunity.cs" />
+    <Compile Include="actors\buffs\Hunger.cs" />
+    <Compile Include="actors\buffs\Invisibility.cs" />
+    <Compile Include="actors\buffs\Levitation.cs" />
+    <Compile Include="actors\buffs\Light.cs" />
+    <Compile Include="actors\buffs\MindVision.cs" />
+    <Compile Include="actors\buffs\Ooze.cs" />
+    <Compile Include="actors\buffs\Paralysis.cs" />
+    <Compile Include="actors\buffs\Poison.cs" />
+    <Compile Include="actors\buffs\Regeneration.cs" />
+    <Compile Include="actors\buffs\Roots.cs" />
+    <Compile Include="actors\buffs\Shadows.cs" />
+    <Compile Include="actors\buffs\Sleep.cs" />
+    <Compile Include="actors\buffs\Slow.cs" />
+    <Compile Include="actors\buffs\SnipersMark.cs" />
+    <Compile Include="actors\buffs\Speed.cs" />
+    <Compile Include="actors\buffs\Terror.cs" />
+    <Compile Include="actors\buffs\Vertigo.cs" />
+    <Compile Include="actors\buffs\Weakness.cs" />
+    <Compile Include="actors\Character.cs" />
+    <Compile Include="actors\hero\Belongings.cs" />
+    <Compile Include="actors\hero\Hero.cs" />
+    <Compile Include="actors\hero\HeroAction.cs" />
+    <Compile Include="actors\hero\HeroClass.cs" />
+    <Compile Include="actors\hero\HeroSubClass.cs" />
+    <Compile Include="actors\mobs\Acidic.cs" />
+    <Compile Include="actors\mobs\AIStateSleeping.cs" />
+    <Compile Include="actors\mobs\Albino.cs" />
+    <Compile Include="actors\mobs\Bandit.cs" />
+    <Compile Include="actors\mobs\Bat.cs" />
+    <Compile Include="actors\mobs\Bestiary.cs" />
+    <Compile Include="actors\mobs\Brute.cs" />
+    <Compile Include="actors\mobs\Crab.cs" />
+    <Compile Include="actors\mobs\DM300.cs" />
+    <Compile Include="actors\mobs\Elemental.cs" />
+    <Compile Include="actors\mobs\Eye.cs" />
+    <Compile Include="actors\mobs\Fleeing.cs" />
+    <Compile Include="actors\mobs\Gnoll.cs" />
+    <Compile Include="actors\mobs\Golem.cs" />
+    <Compile Include="actors\mobs\Goo.cs" />
+    <Compile Include="actors\mobs\Hunting.cs" />
+    <Compile Include="actors\mobs\IAiState.cs" />
+    <Compile Include="actors\mobs\King.cs" />
+    <Compile Include="actors\mobs\Mob.cs" />
+    <Compile Include="actors\mobs\Monk.cs" />
+    <Compile Include="actors\mobs\npcs\Blacksmith.cs" />
+    <Compile Include="actors\mobs\npcs\Ghost.cs" />
+    <Compile Include="actors\mobs\npcs\Imp.cs" />
+    <Compile Include="actors\mobs\npcs\ImpShopkeeper.cs" />
+    <Compile Include="actors\mobs\npcs\MirrorImage.cs" />
+    <Compile Include="actors\mobs\npcs\NPC.cs" />
+    <Compile Include="actors\mobs\npcs\RatKing.cs" />
+    <Compile Include="actors\mobs\npcs\Shopkeeper.cs" />
+    <Compile Include="actors\mobs\npcs\Wandmaker.cs" />
+    <Compile Include="actors\mobs\Passive.cs" />
+    <Compile Include="actors\mobs\Piranha.cs" />
+    <Compile Include="actors\mobs\Rat.cs" />
+    <Compile Include="actors\mobs\Scorpio.cs" />
+    <Compile Include="actors\mobs\Senior.cs" />
+    <Compile Include="actors\mobs\Shaman.cs" />
+    <Compile Include="actors\mobs\Shielded.cs" />
+    <Compile Include="actors\mobs\Skeleton.cs" />
+    <Compile Include="actors\mobs\Spinner.cs" />
+    <Compile Include="actors\mobs\Statue.cs" />
+    <Compile Include="actors\mobs\Succubus.cs" />
+    <Compile Include="actors\mobs\Swarm.cs" />
+    <Compile Include="actors\mobs\Tengu.cs" />
+    <Compile Include="actors\mobs\Thief.cs" />
+    <Compile Include="actors\mobs\Wandering.cs" />
+    <Compile Include="actors\mobs\Warlock.cs" />
+    <Compile Include="actors\mobs\Wraith.cs" />
+    <Compile Include="actors\mobs\Yog.cs" />
+    <Compile Include="Assets.cs" />
+    <Compile Include="Badges.cs" />
+    <Compile Include="Bones.cs" />
+    <Compile Include="Challenges.cs" />
+    <Compile Include="Chrome.cs" />
+    <Compile Include="Dungeon.cs" />
+    <Compile Include="DungeonTilemap.cs" />
+    <Compile Include="effects\BadgeBanner.cs" />
+    <Compile Include="effects\BannerSprites.cs" />
+    <Compile Include="effects\BlobEmitter.cs" />
+    <Compile Include="effects\CellEmitter.cs" />
+    <Compile Include="effects\CheckedCell.cs" />
+    <Compile Include="effects\ColdParticle.cs" />
+    <Compile Include="effects\ColdParticleFactory.cs" />
+    <Compile Include="effects\DeathRay.cs" />
+    <Compile Include="effects\EarthParticle.cs" />
+    <Compile Include="effects\Effects.cs" />
+    <Compile Include="effects\EmoIcon.cs" />
+    <Compile Include="effects\Fireball.cs" />
+    <Compile Include="effects\Flare.cs" />
+    <Compile Include="effects\FloatingText.cs" />
+    <Compile Include="effects\ForceParticle.cs" />
+    <Compile Include="effects\ForceParticleFactory.cs" />
+    <Compile Include="effects\Halo.cs" />
+    <Compile Include="effects\IceBlock.cs" />
+    <Compile Include="effects\Identification.cs" />
+    <Compile Include="effects\Lightning.cs" />
+    <Compile Include="effects\MagicMissile.cs" />
+    <Compile Include="effects\MagicParticle.cs" />
+    <Compile Include="effects\MagicParticleFactory.cs" />
+    <Compile Include="effects\particles\BloodParticle.cs" />
+    <Compile Include="effects\particles\EarthParticle.cs" />
+    <Compile Include="effects\particles\ElmoParticle.cs" />
+    <Compile Include="effects\particles\EnergyParticle.cs" />
+    <Compile Include="effects\particles\FlameParticle.cs" />
+    <Compile Include="effects\particles\FlowParticle.cs" />
+    <Compile Include="effects\particles\LeafParticle.cs" />
+    <Compile Include="effects\particles\PoisonParticle.cs" />
+    <Compile Include="effects\particles\PurpleParticle.cs" />
+    <Compile Include="effects\particles\ShadowParticle.cs" />
+    <Compile Include="effects\particles\ShaftParticle.cs" />
+    <Compile Include="effects\particles\SnowParticle.cs" />
+    <Compile Include="effects\particles\SparkParticle.cs" />
+    <Compile Include="effects\particles\WebParticle.cs" />
+    <Compile Include="effects\particles\WindParticle.cs" />
+    <Compile Include="effects\particles\WoolParticle.cs" />
+    <Compile Include="effects\Pushing.cs" />
+    <Compile Include="effects\Ripple.cs" />
+    <Compile Include="effects\SlowParticle.cs" />
+    <Compile Include="effects\SlowParticleFactory.cs" />
+    <Compile Include="effects\Speck.cs" />
+    <Compile Include="effects\SpellSprite.cs" />
+    <Compile Include="effects\Splash.cs" />
+    <Compile Include="effects\TorchHalo.cs" />
+    <Compile Include="effects\WhiteParticle.cs" />
+    <Compile Include="effects\WhiteParticleFactory.cs" />
+    <Compile Include="effects\Wound.cs" />
+    <Compile Include="FogOfWar.cs" />
+    <Compile Include="GamesInProgress.cs" />
+    <Compile Include="glscripts\Script.cs" />
+    <Compile Include="gltextures\Atlas.cs" />
+    <Compile Include="gltextures\Gradient.cs" />
+    <Compile Include="gltextures\SmartTexture.cs" />
+    <Compile Include="gltextures\TextureCache.cs" />
+    <Compile Include="glwrap\Attribute.cs" />
+    <Compile Include="glwrap\Framebuffer.cs" />
+    <Compile Include="glwrap\Matrix.cs" />
+    <Compile Include="glwrap\Program.cs" />
+    <Compile Include="glwrap\Quad.cs" />
+    <Compile Include="glwrap\Renderbuffer.cs" />
+    <Compile Include="glwrap\Shader.cs" />
+    <Compile Include="glwrap\Texture.cs" />
+    <Compile Include="glwrap\Uniform.cs" />
+    <Compile Include="input\Keys.cs" />
+    <Compile Include="input\Touch.cs" />
+    <Compile Include="input\Touchscreen.cs" />
+    <Compile Include="items\Amulet.cs" />
+    <Compile Include="items\Ankh.cs" />
+    <Compile Include="items\ArmorKit.cs" />
+    <Compile Include="items\armor\Armor.cs" />
+    <Compile Include="items\armor\ClassArmor.cs" />
+    <Compile Include="items\armor\ClothArmor.cs" />
+    <Compile Include="items\armor\Glyph.cs" />
+    <Compile Include="items\armor\glyphs\Affection.cs" />
+    <Compile Include="items\armor\glyphs\AntiEntropy.cs" />
+    <Compile Include="items\armor\glyphs\Bounce.cs" />
+    <Compile Include="items\armor\glyphs\Displacement.cs" />
+    <Compile Include="items\armor\glyphs\Entanglement.cs" />
+    <Compile Include="items\armor\glyphs\Metabolism.cs" />
+    <Compile Include="items\armor\glyphs\Multiplicity.cs" />
+    <Compile Include="items\armor\glyphs\Potential.cs" />
+    <Compile Include="items\armor\glyphs\Stench.cs" />
+    <Compile Include="items\armor\glyphs\Viscosity.cs" />
+    <Compile Include="items\armor\HuntressArmor.cs" />
+    <Compile Include="items\armor\LeatherArmor.cs" />
+    <Compile Include="items\armor\MageArmor.cs" />
+    <Compile Include="items\armor\MailArmor.cs" />
+    <Compile Include="items\armor\PlateArmor.cs" />
+    <Compile Include="items\armor\RogueArmor.cs" />
+    <Compile Include="items\armor\ScaleArmor.cs" />
+    <Compile Include="items\armor\WarriorArmor.cs" />
+    <Compile Include="items\bags\Bag.cs" />
+    <Compile Include="items\bags\ScrollHolder.cs" />
+    <Compile Include="items\bags\SeedPouch.cs" />
+    <Compile Include="items\bags\WandHolster.cs" />
+    <Compile Include="items\Dewdrop.cs" />
+    <Compile Include="items\DewVial.cs" />
+    <Compile Include="items\EquipableItem.cs" />
+    <Compile Include="items\food\ChargrilledMeat.cs" />
+    <Compile Include="items\food\Food.cs" />
+    <Compile Include="items\food\FrozenCarpaccio.cs" />
+    <Compile Include="items\food\MysteryMeat.cs" />
+    <Compile Include="items\food\OverpricedRation.cs" />
+    <Compile Include="items\food\Pasty.cs" />
+    <Compile Include="items\Generator.cs" />
+    <Compile Include="items\Gold.cs" />
+    <Compile Include="items\Heap.cs" />
+    <Compile Include="items\Item.cs" />
+    <Compile Include="items\ItemStatusHandler.cs" />
+    <Compile Include="items\keys\GoldenKey.cs" />
+    <Compile Include="items\keys\IronKey.cs" />
+    <Compile Include="items\keys\Key.cs" />
+    <Compile Include="items\keys\SkeletonKey.cs" />
+    <Compile Include="items\KindOfWeapon.cs" />
+    <Compile Include="items\LloydsBeacon.cs" />
+    <Compile Include="items\potions\Potion.cs" />
+    <Compile Include="items\potions\PotionOfExperience.cs" />
+    <Compile Include="items\potions\PotionOfFrost.cs" />
+    <Compile Include="items\potions\PotionOfHealing.cs" />
+    <Compile Include="items\potions\PotionOfInvisibility.cs" />
+    <Compile Include="items\potions\PotionOfLevitation.cs" />
+    <Compile Include="items\potions\PotionOfLiquidFlame.cs" />
+    <Compile Include="items\potions\PotionOfMight.cs" />
+    <Compile Include="items\potions\PotionOfMindVision.cs" />
+    <Compile Include="items\potions\PotionOfParalyticGas.cs" />
+    <Compile Include="items\potions\PotionOfPurity.cs" />
+    <Compile Include="items\potions\PotionOfStrength.cs" />
+    <Compile Include="items\potions\PotionOfToxicGas.cs" />
+    <Compile Include="items\quest\CorpseDust.cs" />
+    <Compile Include="items\quest\DarkGold.cs" />
+    <Compile Include="items\quest\DriedRose.cs" />
+    <Compile Include="items\quest\DwarfToken.cs" />
+    <Compile Include="items\quest\Pickaxe.cs" />
+    <Compile Include="items\quest\RatSkull.cs" />
+    <Compile Include="items\rings\Ring.cs" />
+    <Compile Include="items\rings\RingOfAccuracy.cs" />
+    <Compile Include="items\rings\RingOfDetection.cs" />
+    <Compile Include="items\rings\RingOfElements.cs" />
+    <Compile Include="items\rings\RingOfEvasion.cs" />
+    <Compile Include="items\rings\RingOfHaggler.cs" />
+    <Compile Include="items\rings\RingOfHaste.cs" />
+    <Compile Include="items\rings\RingOfHerbalism.cs" />
+    <Compile Include="items\rings\RingOfMending.cs" />
+    <Compile Include="items\rings\RingOfPower.cs" />
+    <Compile Include="items\rings\RingOfSatiety.cs" />
+    <Compile Include="items\rings\RingOfShadows.cs" />
+    <Compile Include="items\rings\RingOfThorns.cs" />
+    <Compile Include="items\scrolls\InventoryScroll.cs" />
+    <Compile Include="items\scrolls\Scroll.cs" />
+    <Compile Include="items\scrolls\ScrollOfChallenge.cs" />
+    <Compile Include="items\scrolls\ScrollOfIdentify.cs" />
+    <Compile Include="items\scrolls\ScrollOfLullaby.cs" />
+    <Compile Include="items\scrolls\ScrollOfMagicMapping.cs" />
+    <Compile Include="items\scrolls\ScrollOfMirrorImage.cs" />
+    <Compile Include="items\scrolls\ScrollOfPsionicBlast.cs" />
+    <Compile Include="items\scrolls\ScrollOfRecharging.cs" />
+    <Compile Include="items\scrolls\ScrollOfRemoveCurse.cs" />
+    <Compile Include="items\scrolls\ScrollOfTeleportation.cs" />
+    <Compile Include="items\scrolls\ScrollOfTerror.cs" />
+    <Compile Include="items\scrolls\ScrollOfUpgrade.cs" />
+    <Compile Include="items\scrolls\ScrollOfWeaponUpgrade.cs" />
+    <Compile Include="items\Stylus.cs" />
+    <Compile Include="items\TomeOfMastery.cs" />
+    <Compile Include="items\Torch.cs" />
+    <Compile Include="items\wands\Wand.cs" />
+    <Compile Include="items\wands\WandOfAmok.cs" />
+    <Compile Include="items\wands\WandOfAvalanche.cs" />
+    <Compile Include="items\wands\WandOfBlink.cs" />
+    <Compile Include="items\wands\WandOfDisintegration.cs" />
+    <Compile Include="items\wands\WandOfFirebolt.cs" />
+    <Compile Include="items\wands\WandOfFlock.cs" />
+    <Compile Include="items\wands\WandOfLightning.cs" />
+    <Compile Include="items\wands\WandOfMagicMissile.cs" />
+    <Compile Include="items\wands\WandOfPoison.cs" />
+    <Compile Include="items\wands\WandOfRegrowth.cs" />
+    <Compile Include="items\wands\WandOfSlowness.cs" />
+    <Compile Include="items\wands\WandOfTelekinesis.cs" />
+    <Compile Include="items\wands\WandOfTeleportation.cs" />
+    <Compile Include="items\weapon\enchantments\Death.cs" />
+    <Compile Include="items\weapon\enchantments\Fire.cs" />
+    <Compile Include="items\weapon\enchantments\Horror.cs" />
+    <Compile Include="items\weapon\enchantments\Instability.cs" />
+    <Compile Include="items\weapon\enchantments\Leech.cs" />
+    <Compile Include="items\weapon\enchantments\Luck.cs" />
+    <Compile Include="items\weapon\enchantments\Paralysis.cs" />
+    <Compile Include="items\weapon\enchantments\Piercing.cs" />
+    <Compile Include="items\weapon\enchantments\Poison.cs" />
+    <Compile Include="items\weapon\enchantments\Slow.cs" />
+    <Compile Include="items\weapon\enchantments\Swing.cs" />
+    <Compile Include="items\weapon\melee\BattleAxe.cs" />
+    <Compile Include="items\weapon\melee\Dagger.cs" />
+    <Compile Include="items\weapon\melee\Glaive.cs" />
+    <Compile Include="items\weapon\melee\Knuckles.cs" />
+    <Compile Include="items\weapon\melee\Longsword.cs" />
+    <Compile Include="items\weapon\melee\Mace.cs" />
+    <Compile Include="items\weapon\melee\MeleeWeapon.cs" />
+    <Compile Include="items\weapon\melee\Quarterstaff.cs" />
+    <Compile Include="items\weapon\melee\ShortSword.cs" />
+    <Compile Include="items\weapon\melee\Spear.cs" />
+    <Compile Include="items\weapon\melee\Sword.cs" />
+    <Compile Include="items\weapon\melee\WarHammer.cs" />
+    <Compile Include="items\weapon\missiles\Boomerang.cs" />
+    <Compile Include="items\weapon\missiles\CurareDart.cs" />
+    <Compile Include="items\weapon\missiles\Dart.cs" />
+    <Compile Include="items\weapon\missiles\IncendiaryDart.cs" />
+    <Compile Include="items\weapon\missiles\Javelin.cs" />
+    <Compile Include="items\weapon\missiles\MissileWeapon.cs" />
+    <Compile Include="items\weapon\missiles\Shuriken.cs" />
+    <Compile Include="items\weapon\missiles\Tamahawk.cs" />
+    <Compile Include="items\weapon\Weapon.cs" />
+    <Compile Include="items\Weightstone.cs" />
+    <Compile Include="Journal.cs" />
+    <Compile Include="levels\CavesBossLevel.cs" />
+    <Compile Include="levels\CavesLevel.cs" />
+    <Compile Include="levels\CityBossLevel.cs" />
+    <Compile Include="levels\CityLevel.cs" />
+    <Compile Include="levels\DeadEndLevel.cs" />
+    <Compile Include="levels\features\AlchemyPot.cs" />
+    <Compile Include="levels\features\Chasm.cs" />
+    <Compile Include="levels\features\Door.cs" />
+    <Compile Include="levels\features\HighGrass.cs" />
+    <Compile Include="levels\HallsBossLevel.cs" />
+    <Compile Include="levels\HallsLevel.cs" />
+    <Compile Include="levels\LastLevel.cs" />
+    <Compile Include="levels\LastShopLevel.cs" />
+    <Compile Include="levels\Level.cs" />
+    <Compile Include="levels\painters\ArmoryPainter.cs" />
+    <Compile Include="levels\painters\BlacksmithPainter.cs" />
+    <Compile Include="levels\painters\BossExitPainter.cs" />
+    <Compile Include="levels\painters\CryptPainter.cs" />
+    <Compile Include="levels\painters\EntrancePainter.cs" />
+    <Compile Include="levels\painters\ExitPainter.cs" />
+    <Compile Include="levels\painters\GardenPainter.cs" />
+    <Compile Include="levels\painters\LaboratoryPainter.cs" />
+    <Compile Include="levels\painters\LibraryPainter.cs" />
+    <Compile Include="levels\painters\MagicWellPainter.cs" />
+    <Compile Include="levels\painters\Painter.cs" />
+    <Compile Include="levels\painters\PassagePainter.cs" />
+    <Compile Include="levels\painters\PitPainter.cs" />
+    <Compile Include="levels\painters\PoolPainter.cs" />
+    <Compile Include="levels\painters\RatKingPainter.cs" />
+    <Compile Include="levels\painters\ShopPainter.cs" />
+    <Compile Include="levels\painters\StandardPainter.cs" />
+    <Compile Include="levels\painters\StatuePainter.cs" />
+    <Compile Include="levels\painters\StoragePainter.cs" />
+    <Compile Include="levels\painters\TrapsPainter.cs" />
+    <Compile Include="levels\painters\TreasuryPainter.cs" />
+    <Compile Include="levels\painters\TunnelPainter.cs" />
+    <Compile Include="levels\painters\VaultPainter.cs" />
+    <Compile Include="levels\painters\WeakFloorPainter.cs" />
+    <Compile Include="levels\Patch.cs" />
+    <Compile Include="levels\PrisonBossLevel.cs" />
+    <Compile Include="levels\PrisonLevel.cs" />
+    <Compile Include="levels\RegularLevel.cs" />
+    <Compile Include="levels\Room.cs" />
+    <Compile Include="levels\SewerBossLevel.cs" />
+    <Compile Include="levels\SewerLevel.cs" />
+    <Compile Include="levels\Terrain.cs" />
+    <Compile Include="levels\traps\AlarmTrap.cs" />
+    <Compile Include="levels\traps\FireTrap.cs" />
+    <Compile Include="levels\traps\GrippingTrap.cs" />
+    <Compile Include="levels\traps\LightningTrap.cs" />
+    <Compile Include="levels\traps\ParalyticTrap.cs" />
+    <Compile Include="levels\traps\PoisonTrap.cs" />
+    <Compile Include="levels\traps\SummoningTrap.cs" />
+    <Compile Include="levels\traps\ToxicTrap.cs" />
+    <Compile Include="mechanics\Ballistica.cs" />
+    <Compile Include="mechanics\ShadowCaster.cs" />
+    <Compile Include="noosa\audio\Music.cs" />
+    <Compile Include="noosa\audio\Sample.cs" />
+    <Compile Include="noosa\BitmapText.cs" />
+    <Compile Include="noosa\BitmapTextMultiline.cs" />
+    <Compile Include="noosa\Camera.cs" />
+    <Compile Include="noosa\ColorBlock.cs" />
+    <Compile Include="noosa\Game.cs" />
+    <Compile Include="noosa\Gizmo.cs" />
+    <Compile Include="noosa\Group.cs" />
+    <Compile Include="noosa\Image.cs" />
+    <Compile Include="noosa\LineSplitter.cs" />
+    <Compile Include="noosa\MovieClip.cs" />
+    <Compile Include="noosa\NinePatch.cs" />
+    <Compile Include="noosa\NoosaScript.cs" />
+    <Compile Include="noosa\particles\Emitter.cs" />
+    <Compile Include="noosa\particles\PixelParticle.cs" />
+    <Compile Include="noosa\PseudoPixel.cs" />
+    <Compile Include="noosa\Resizable.cs" />
+    <Compile Include="noosa\Scene.cs" />
+    <Compile Include="noosa\SkinnedBlock.cs" />
+    <Compile Include="noosa\SymbolWriter.cs" />
+    <Compile Include="noosa\TextureFilm.cs" />
+    <Compile Include="noosa\Tilemap.cs" />
+    <Compile Include="noosa\TouchArea.cs" />
+    <Compile Include="noosa\tweeners\AlphaTweener.cs" />
+    <Compile Include="noosa\tweeners\CameraScrollTweener.cs" />
+    <Compile Include="noosa\tweeners\Delayer.cs" />
+    <Compile Include="noosa\tweeners\IListener.cs" />
+    <Compile Include="noosa\tweeners\PosTweener.cs" />
+    <Compile Include="noosa\tweeners\ScaleTweener.cs" />
+    <Compile Include="noosa\tweeners\Tweener.cs" />
+    <Compile Include="noosa\ui\Button.cs" />
+    <Compile Include="noosa\ui\CheckBox.cs" />
+    <Compile Include="noosa\ui\Component.cs" />
+    <Compile Include="noosa\Visual.cs" />
+    <Compile Include="PixelDungeon.cs" />
+    <Compile Include="plants\Dreamweed.cs" />
+    <Compile Include="plants\Earthroot.cs" />
+    <Compile Include="plants\Fadeleaf.cs" />
+    <Compile Include="plants\Firebloom.cs" />
+    <Compile Include="plants\Icecap.cs" />
+    <Compile Include="plants\Plant.cs" />
+    <Compile Include="plants\Sorrowmoss.cs" />
+    <Compile Include="plants\Sungrass.cs" />
+    <Compile Include="Preferences.cs" />
+    <Compile Include="Rankings.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultDescriptions.cs" />
+    <Compile Include="scenes\AboutScene.cs" />
+    <Compile Include="scenes\AmuletScene.cs" />
+    <Compile Include="scenes\BadgesScene.cs" />
+    <Compile Include="scenes\CellSelector.cs" />
+    <Compile Include="scenes\GameScene.cs" />
+    <Compile Include="scenes\InterlevelScene.cs" />
+    <Compile Include="scenes\IntroScene.cs" />
+    <Compile Include="scenes\PixelScene.cs" />
+    <Compile Include="scenes\RankingsScene.cs" />
+    <Compile Include="scenes\StartScene.cs" />
+    <Compile Include="scenes\SurfaceScene.cs" />
+    <Compile Include="scenes\TitleScene.cs" />
+    <Compile Include="sprites\AcidicSprite.cs" />
+    <Compile Include="sprites\AlbinoSprite.cs" />
+    <Compile Include="sprites\BanditSprite.cs" />
+    <Compile Include="sprites\BatSprite.cs" />
+    <Compile Include="sprites\BlacksmithSprite.cs" />
+    <Compile Include="sprites\BruteSprite.cs" />
+    <Compile Include="sprites\BurningFistSprite.cs" />
+    <Compile Include="sprites\CharSprite.cs" />
+    <Compile Include="sprites\CrabSprite.cs" />
+    <Compile Include="sprites\DiscardedItemSprite.cs" />
+    <Compile Include="sprites\DM300Sprite.cs" />
+    <Compile Include="sprites\ElementalSprite.cs" />
+    <Compile Include="sprites\EyeSprite.cs" />
+    <Compile Include="sprites\FetidRatSprite.cs" />
+    <Compile Include="sprites\GhostSprite.cs" />
+    <Compile Include="sprites\GnollSprite.cs" />
+    <Compile Include="sprites\GolemSprite.cs" />
+    <Compile Include="sprites\GooSprite.cs" />
+    <Compile Include="sprites\HeroSprite.cs" />
+    <Compile Include="sprites\ImpSprite.cs" />
+    <Compile Include="sprites\ItemSprite.cs" />
+    <Compile Include="sprites\ItemSpriteSheet.cs" />
+    <Compile Include="sprites\KingSprite.cs" />
+    <Compile Include="sprites\LarvaSprite.cs" />
+    <Compile Include="sprites\MirrorSprite.cs" />
+    <Compile Include="sprites\MissileSprite.cs" />
+    <Compile Include="sprites\MobSprite.cs" />
+    <Compile Include="sprites\MonkSprite.cs" />
+    <Compile Include="sprites\PiranhaSprite.cs" />
+    <Compile Include="sprites\PlantSprite.cs" />
+    <Compile Include="sprites\RatKingSprite.cs" />
+    <Compile Include="sprites\RatSprite.cs" />
+    <Compile Include="sprites\RottingFistSprite.cs" />
+    <Compile Include="sprites\ScorpioSprite.cs" />
+    <Compile Include="sprites\SeniorSprite.cs" />
+    <Compile Include="sprites\ShamanSprite.cs" />
+    <Compile Include="sprites\SheepSprite.cs" />
+    <Compile Include="sprites\ShieldedSprite.cs" />
+    <Compile Include="sprites\ShopkeeperSprite.cs" />
+    <Compile Include="sprites\SkeletonSprite.cs" />
+    <Compile Include="sprites\SpinnerSprite.cs" />
+    <Compile Include="sprites\StatueSprite.cs" />
+    <Compile Include="sprites\SuccubusSprite.cs" />
+    <Compile Include="sprites\SwarmSprite.cs" />
+    <Compile Include="sprites\TenguSprite.cs" />
+    <Compile Include="sprites\ThiefSprite.cs" />
+    <Compile Include="sprites\UndeadSprite.cs" />
+    <Compile Include="sprites\WandmakerSprite.cs" />
+    <Compile Include="sprites\WarlockSprite.cs" />
+    <Compile Include="sprites\WraithSprite.cs" />
+    <Compile Include="sprites\YogSprite.cs" />
+    <Compile Include="Statistics.cs" />
+    <Compile Include="StringHelperClass.cs" />
+    <Compile Include="ui\Archs.cs" />
+    <Compile Include="ui\AttackIndicator.cs" />
+    <Compile Include="ui\BadgesList.cs" />
+    <Compile Include="ui\Banner.cs" />
+    <Compile Include="ui\BuffIndicator.cs" />
+    <Compile Include="ui\BusyIndicator.cs" />
+    <Compile Include="ui\CheckBox.cs" />
+    <Compile Include="ui\Compass.cs" />
+    <Compile Include="ui\DangerIndicator.cs" />
+    <Compile Include="ui\ExitButton.cs" />
+    <Compile Include="ui\GameLog.cs" />
+    <Compile Include="ui\GoldIndicator.cs" />
+    <Compile Include="ui\HealthIndicator.cs" />
+    <Compile Include="ui\Icons.cs" />
+    <Compile Include="ui\ItemSlot.cs" />
+    <Compile Include="ui\LootIndicator.cs" />
+    <Compile Include="ui\PrefsButton.cs" />
+    <Compile Include="ui\QuickSlot.cs" />
+    <Compile Include="ui\RedButton.cs" />
+    <Compile Include="ui\ScrollPane.cs" />
+    <Compile Include="ui\SimpleButton.cs" />
+    <Compile Include="ui\StatusPane.cs" />
+    <Compile Include="ui\Tag.cs" />
+    <Compile Include="ui\Toast.cs" />
+    <Compile Include="ui\Toolbar.cs" />
+    <Compile Include="ui\Window.cs" />
+    <Compile Include="utils\BArray.cs" />
+    <Compile Include="utils\BitmapCache.cs" />
+    <Compile Include="utils\BitmapFilm.cs" />
+    <Compile Include="utils\Bundlable.cs" />
+    <Compile Include="utils\Bundle.cs" />
+    <Compile Include="utils\Callback.cs" />
+    <Compile Include="utils\ColorMath.cs" />
+    <Compile Include="utils\GameMath.cs" />
+    <Compile Include="utils\GLog.cs" />
+    <Compile Include="utils\Graph.cs" />
+    <Compile Include="utils\Listener.cs" />
+    <Compile Include="utils\PathFinder.cs" />
+    <Compile Include="utils\Point.cs" />
+    <Compile Include="utils\PointF.cs" />
+    <Compile Include="utils\Random.cs" />
+    <Compile Include="utils\Rect.cs" />
+    <Compile Include="utils\Signal.cs" />
+    <Compile Include="utils\SparseArray.cs" />
+    <Compile Include="utils\SystemTime.cs" />
+    <Compile Include="utils\Utils.cs" />
+    <Compile Include="windows\IconTitle.cs" />
+    <Compile Include="windows\WndBadge.cs" />
+    <Compile Include="windows\WndBag.cs" />
+    <Compile Include="windows\WndBlacksmith.cs" />
+    <Compile Include="windows\WndCatalogus.cs" />
+    <Compile Include="windows\WndChallenges.cs" />
+    <Compile Include="windows\WndChooseWay.cs" />
+    <Compile Include="windows\WndClass.cs" />
+    <Compile Include="windows\WndError.cs" />
+    <Compile Include="windows\WndGame.cs" />
+    <Compile Include="windows\WndHero.cs" />
+    <Compile Include="windows\WndImp.cs" />
+    <Compile Include="windows\WndInfoCell.cs" />
+    <Compile Include="windows\WndInfoItem.cs" />
+    <Compile Include="windows\WndInfoMob.cs" />
+    <Compile Include="windows\WndInfoPlant.cs" />
+    <Compile Include="windows\WndItem.cs" />
+    <Compile Include="windows\WndJournal.cs" />
+    <Compile Include="windows\WndList.cs" />
+    <Compile Include="windows\WndMessage.cs" />
+    <Compile Include="windows\WndOptions.cs" />
+    <Compile Include="windows\WndQuest.cs" />
+    <Compile Include="windows\WndRanking.cs" />
+    <Compile Include="windows\WndResurrect.cs" />
+    <Compile Include="windows\WndSadGhost.cs" />
+    <Compile Include="windows\WndSettings.cs" />
+    <Compile Include="windows\WndStory.cs" />
+    <Compile Include="windows\WndTabbed.cs" />
+    <Compile Include="windows\WndTitledMessage.cs" />
+    <Compile Include="windows\WndTradeItem.cs" />
+    <Compile Include="windows\WndWandmaker.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\amulet.png" />
+    <AndroidAsset Include="Assets\arcs1.png" />
+    <AndroidAsset Include="Assets\arcs2.png" />
+    <AndroidAsset Include="Assets\avatars.png" />
+    <AndroidAsset Include="Assets\badges.png" />
+    <AndroidAsset Include="Assets\banners.png" />
+    <AndroidAsset Include="Assets\bat.png" />
+    <AndroidAsset Include="Assets\blacksmith.png" />
+    <AndroidAsset Include="Assets\brute.png" />
+    <AndroidAsset Include="Assets\buffs.png" />
+    <AndroidAsset Include="Assets\burning_fist.png" />
+    <AndroidAsset Include="Assets\chrome.png" />
+    <AndroidAsset Include="Assets\crab.png" />
+    <AndroidAsset Include="Assets\dashboard.png" />
+    <AndroidAsset Include="Assets\demon.png" />
+    <AndroidAsset Include="Assets\dm300.png" />
+    <AndroidAsset Include="Assets\effects.png" />
+    <AndroidAsset Include="Assets\elemental.png" />
+    <AndroidAsset Include="Assets\exp_bar.png" />
+    <AndroidAsset Include="Assets\eye.png" />
+    <AndroidAsset Include="Assets\fireball.png" />
+    <AndroidAsset Include="Assets\font15x.png" />
+    <AndroidAsset Include="Assets\font1x.png" />
+    <AndroidAsset Include="Assets\font25x.png" />
+    <AndroidAsset Include="Assets\font2x.png" />
+    <AndroidAsset Include="Assets\font3x.png" />
+    <AndroidAsset Include="Assets\game.mp3" />
+    <AndroidAsset Include="Assets\ghost.png" />
+    <AndroidAsset Include="Assets\gnoll.png" />
+    <AndroidAsset Include="Assets\golem.png" />
+    <AndroidAsset Include="Assets\goo.png" />
+    <AndroidAsset Include="Assets\hp_bar.png" />
+    <AndroidAsset Include="Assets\icons.png" />
+    <AndroidAsset Include="Assets\items.png" />
+    <AndroidAsset Include="Assets\king.png" />
+    <AndroidAsset Include="Assets\large_buffs.png" />
+    <AndroidAsset Include="Assets\larva.png" />
+    <AndroidAsset Include="Assets\mage.png" />
+    <AndroidAsset Include="Assets\monk.png" />
+    <AndroidAsset Include="Assets\pet.png" />
+    <AndroidAsset Include="Assets\piranha.png" />
+    <AndroidAsset Include="Assets\plants.png" />
+    <AndroidAsset Include="Assets\ranger.png" />
+    <AndroidAsset Include="Assets\rat.png" />
+    <AndroidAsset Include="Assets\ratking.png" />
+    <AndroidAsset Include="Assets\rogue.png" />
+    <AndroidAsset Include="Assets\rotting_fist.png" />
+    <AndroidAsset Include="Assets\scorpio.png" />
+    <AndroidAsset Include="Assets\shaman.png" />
+    <AndroidAsset Include="Assets\sheep.png" />
+    <AndroidAsset Include="Assets\shopkeeper.png" />
+    <AndroidAsset Include="Assets\skeleton.png" />
+    <AndroidAsset Include="Assets\snd_alert.mp3" />
+    <AndroidAsset Include="Assets\snd_badge.mp3" />
+    <AndroidAsset Include="Assets\snd_beacon.mp3" />
+    <AndroidAsset Include="Assets\snd_blast.mp3" />
+    <AndroidAsset Include="Assets\snd_bones.mp3" />
+    <AndroidAsset Include="Assets\snd_boss.mp3" />
+    <AndroidAsset Include="Assets\snd_burning.mp3" />
+    <AndroidAsset Include="Assets\snd_challenge.mp3" />
+    <AndroidAsset Include="Assets\snd_charms.mp3" />
+    <AndroidAsset Include="Assets\snd_click.mp3" />
+    <AndroidAsset Include="Assets\snd_cursed.mp3" />
+    <AndroidAsset Include="Assets\snd_death.mp3" />
+    <AndroidAsset Include="Assets\snd_descend.mp3" />
+    <AndroidAsset Include="Assets\snd_dewdrop.mp3" />
+    <AndroidAsset Include="Assets\snd_door_open.mp3" />
+    <AndroidAsset Include="Assets\snd_drink.mp3" />
+    <AndroidAsset Include="Assets\snd_eat.mp3" />
+    <AndroidAsset Include="Assets\snd_evoke.mp3" />
+    <AndroidAsset Include="Assets\snd_falling.mp3" />
+    <AndroidAsset Include="Assets\snd_ghost.mp3" />
+    <AndroidAsset Include="Assets\snd_gold.mp3" />
+    <AndroidAsset Include="Assets\snd_hit.mp3" />
+    <AndroidAsset Include="Assets\snd_item.mp3" />
+    <AndroidAsset Include="Assets\snd_levelup.mp3" />
+    <AndroidAsset Include="Assets\snd_lightning.mp3" />
+    <AndroidAsset Include="Assets\snd_lullaby.mp3" />
+    <AndroidAsset Include="Assets\snd_mastery.mp3" />
+    <AndroidAsset Include="Assets\snd_meld.mp3" />
+    <AndroidAsset Include="Assets\snd_miss.mp3" />
+    <AndroidAsset Include="Assets\snd_plant.mp3" />
+    <AndroidAsset Include="Assets\snd_puff.mp3" />
+    <AndroidAsset Include="Assets\snd_ray.mp3" />
+    <AndroidAsset Include="Assets\snd_read.mp3" />
+    <AndroidAsset Include="Assets\snd_rocks.mp3" />
+    <AndroidAsset Include="Assets\snd_secret.mp3" />
+    <AndroidAsset Include="Assets\snd_shatter.mp3" />
+    <AndroidAsset Include="Assets\snd_step.mp3" />
+    <AndroidAsset Include="Assets\snd_teleport.mp3" />
+    <AndroidAsset Include="Assets\snd_tomb.mp3" />
+    <AndroidAsset Include="Assets\snd_trap.mp3" />
+    <AndroidAsset Include="Assets\snd_unlock.mp3" />
+    <AndroidAsset Include="Assets\snd_water.mp3" />
+    <AndroidAsset Include="Assets\snd_zap.mp3" />
+    <AndroidAsset Include="Assets\specks.png" />
+    <AndroidAsset Include="Assets\spell_icons.png" />
+    <AndroidAsset Include="Assets\spinner.png" />
+    <AndroidAsset Include="Assets\statue.png" />
+    <AndroidAsset Include="Assets\status_pane.png" />
+    <AndroidAsset Include="Assets\succubus.png" />
+    <AndroidAsset Include="Assets\surface.mp3" />
+    <AndroidAsset Include="Assets\surface.png" />
+    <AndroidAsset Include="Assets\swarm.png" />
+    <AndroidAsset Include="Assets\tengu.png" />
+    <AndroidAsset Include="Assets\theme.mp3" />
+    <AndroidAsset Include="Assets\thief.png" />
+    <AndroidAsset Include="Assets\tiles0.png" />
+    <AndroidAsset Include="Assets\tiles1.png" />
+    <AndroidAsset Include="Assets\tiles2.png" />
+    <AndroidAsset Include="Assets\tiles3.png" />
+    <AndroidAsset Include="Assets\tiles4.png" />
+    <AndroidAsset Include="Assets\toolbar.png" />
+    <AndroidAsset Include="Assets\undead.png" />
+    <AndroidAsset Include="Assets\wandmaker.png" />
+    <AndroidAsset Include="Assets\warlock.png" />
+    <AndroidAsset Include="Assets\warrior.png" />
+    <AndroidAsset Include="Assets\water0.png" />
+    <AndroidAsset Include="Assets\water1.png" />
+    <AndroidAsset Include="Assets\water2.png" />
+    <AndroidAsset Include="Assets\water3.png" />
+    <AndroidAsset Include="Assets\water4.png" />
+    <AndroidAsset Include="Assets\wraith.png" />
+    <AndroidAsset Include="Assets\yog.png" />
+    <Content Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\layout\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+     Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
